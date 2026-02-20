@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de alumnos</title>
+    <script src="js/functions.js">
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h1>🎓 Generador de Alumnos</h1>
+
+    <div class="form-group">
+        <label for="registros">Número de registros</label>
+        <input type="number" id="registros" value="1" min="1" max="50000">
+        <div class="preset-buttons">
+            <button class="btn-small" onclick="document.getElementById('registros').value=1;">Mín (1)</button>
+            <button class="btn-small" onclick="document.getElementById('registros').value=1000;">1,000</button>
+            <button class="btn-small" onclick="document.getElementById('registros').value=50000;">Máx (50k)</button>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="option">Tipo de archivo</label>
+        <select id="option">
+            <option value="1">SQL MySQL / MariaDB</option>
+            <option value="2">Postgresql</option>
+            <option value="3">CSV</option>
+            <option value="4">JSON</option>
+        </select>
+    </div>
+
+    <div class="actions">
+        <button class="btn-main btn-generate" onclick="generar()">⚡ Generar</button>
+        <button class="btn-main btn-save" onclick="guardarArchivo()">💾 Guardar</button>
+    </div>
+
+    <p id="salida"></p>
+</div>
+
+</body>
+</html>
